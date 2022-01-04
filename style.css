@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+body{
+    display: grid;
+    place-items: center;
+    height: 94vh;
+    font-size: 70px;
+    font-family: "Pacifico", sans-serif;
+    color: blueviolet;
+    background-color: #e0eef8;
+    background-image: url("./img.png");
+    background-repeat: repeat;
+}
+::selection{
+    background: dodgerblue;
+    color: white;
+}
