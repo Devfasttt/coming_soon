@@ -1,0 +1,184 @@
+<html>
+<head>
+<title>Car Detailer🚘</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:"https://api.apispreadsheets.com/data/wObSksRKcJmQezNA/",
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          calert("Form Data Submitted :)")
+        },
+        error: function(){
+          calert("There was an error :(")
+        }
+    });
+}
+
+function dark(){
+    
+    document.getElementById("🌛").innerText==="🌞"?
+    (document.getElementById("🌛").innerText="🌛",
+    document.documentElement.style.setProperty('--black', '#222'),
+    document.body.style.backgroundColor="white")
+    :
+    (document.getElementById("🌛").innerText="🌞",
+    document.documentElement.style.setProperty('--black', 'white'),
+    document.body.style.backgroundColor="#333")
+
+}
+
+function ok(){
+    document.getElementById("output").classList.add("😵")
+}
+function calert(text){
+    document.getElementById("output").classList.remove("😵")
+    document.getElementById("m").innerText=text
+
+}
+</script>
+</head>
+<body>
+<style>
+    :root{
+    --black:#222;
+}
+*{
+    margin: 0%;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+}
+body{
+    margin-left: 35px;
+    margin-top: 20px;
+}
+label{
+    font-weight: bold;
+    font-size: 24px !important;
+    margin-bottom: 7px;
+    color: var(--black);
+}
+input{
+    margin-bottom: 15px;
+}
+button{
+    color: white;
+    font-weight: bolder;
+    background-color: dodgerblue;
+    border-radius: 15px;
+    padding: 3.5px 7px;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+h1{
+    color: dodgerblue;
+    font-size: 50px;
+}
+.😵{
+    display: none;
+}
+article{
+    background: rgb(223, 239, 255);
+    margin-right: 35px;
+    margin-bottom: 20px;
+    border: 2px dotted dodgerblue;
+    width: fit-content;
+    padding: 8px 12px 3px 12px;
+    border-radius: 7px;
+    position: absolute;
+    bottom: -10px;
+    right: 0px;
+}
+</style>
+
+
+    <h1>Car Detailer🚘</h1>
+    <button id="🌛" onclick="dark()">🌛</button>
+    <br/>
+   
+
+  <form id="myForm">
+    <label>SOC</label>
+    <br/>
+    <input name="SOC" />
+    <br/>
+    <label>Average(Wh/Km)</label>
+    <br/>
+    <input name="Avg_Wh_Km" />
+    <br/>
+    <label>Trip Start Reading</label>
+    <br/>
+    <input name="Trip_Start_Reading" />
+    <br/>
+    <label>DTE</label>
+    <br/>
+    <input name="DTE" />
+    <br/>
+    <label>Odometer</label>
+    <br/>
+    <input name="Odometer" />
+    <br/>
+    <label>Ambient Temp</label>
+    <br/>
+    <input name="Ambient_Temp" />
+    <br/>
+    <label>AC Temp</label>
+    <br/>
+    <input name="AC_Temp" />
+    <br/>
+    <label>Auto/Manual</label>
+    
+    <input type="radio" id="Auto_Manual" name="Auto_Manual" value="Auto" />Auto
+    <input type="radio" id="Auto_Manual" name="Auto_Manual" value="Manual" checked />Manual
+    <br/>
+    <label>Mode</label>
+  
+    <input type="radio" id="Mode" name="Mode" value="D" checked/>D
+    <input type="radio" id="Mode" name="Mode" value="S" />S
+    <br/> 
+    <label>Fan Speed</label>
+    <select name="Fan_speed" id="Fan_speed">
+        <option value="1">1</option>
+        <option value="2" selected>2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+    <br/>
+    <br/>
+    <label>Pax Count</label>
+
+    <select name="Pax_Count" id="Pax_Count">
+        <option value="1">1</option>
+        <option value="2" selected>2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    <br/>
+    <br/>
+    <label>Remarks</label>
+    <br/>
+    <textarea name="Remarks">
+    </textarea>
+    <br/>
+    <br/>
+  </form>
+  <button onclick="SubForm()">Submit</button>
+  <article id="output" class="😵"><b>Output: </b>
+      <div id="m">Output</div>
+      <button onclick="ok()">👍🏻</button>
+  </article>
+
+
+</body>
+</html>
