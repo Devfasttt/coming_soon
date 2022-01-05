@@ -5,8 +5,8 @@ body{
     height: 94vh;
     font-size: 70px;
     font-family: "Pacifico", sans-serif;
-    color: blueviolet;
-    background-color: #edf8ff;
+    color: white;
+    background-color: deeppink;
     background-image: url("./img.png");
     background-repeat: repeat;
 }
